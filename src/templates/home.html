@@ -1,0 +1,66 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="starter-template">
+    <div class="header">
+        <h1>NER Service</h1>
+        <form method="GET" action="/auth/logout">
+            <button class="btn" type="submit">Logout</button>
+        </form>
+    </div>
+    <hr>
+    <br>
+    <div>
+        {% include 'modal.html' %}
+    </div>
+    <br><br>
+    <div>
+        <h3>Tasks</h3>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            <tbody id="tasks">
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div>
+        <h3>Reports</h3>
+        <br>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+            </thead>
+            <tbody id="reports">
+            {% if reports%}
+            {% for report in reports %}
+            <tr>
+                <td>{{report.id}}</td>
+                <td>{{report.name}}</td>
+                <td>
+                    <form action={{
+                    "reports/" ~ report.id ~ "/html" }}>
+                    <input type="submit" class="btn btn-html" value="Go to html"/>
+                    </form>
+                </td>
+            </tr>
+            </tr>
+            {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

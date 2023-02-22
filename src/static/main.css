@@ -1,0 +1,49 @@
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 18px;
+    background: linear-gradient(to bottom, rgba(2, 0, 36, 1) 0%, rgba(67, 46, 112, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+body {
+    padding: 2rem 4rem;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    background: repeat;
+    color: white;
+    overflow: hidden;
+}
+
+.btn {
+    background-color: white;
+    color: black;
+    padding: 1em 1.5em;
+    border-radius: 0.5rem;
+}
+
+.btn-html {
+    max-width: 200px;
+}
+
+.container {
+    padding-left: 0;
+}
+
+.table thead th {
+    color: white;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}

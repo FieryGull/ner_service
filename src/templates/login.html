@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NER Service</title>
+    <link href="{{url_for('static', path='/login.css')}}" media="screen" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{url_for('static', path='/favicon.png')}}" type="image/png">
+</head>
+<body>
+<div class="main">
+    <input type="checkbox" id="chk" aria-hidden="true">
+
+    <div class="login">
+        <form method="POST" action="/auth/login">
+            <label for="chk" aria-hidden="true">Login</label>
+            {% if error %}
+            <div class="message">
+                {{ error }}
+            </div>
+            {% endif %}
+            <input type="text" name="username" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="signup">
+        <form method="POST" action="/auth/signup">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
